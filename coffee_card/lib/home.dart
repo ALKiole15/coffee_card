@@ -1,7 +1,8 @@
+import 'package:coffee_card/coffee_prefs.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MaterialApp(home: Home()));
+  runApp(const MaterialApp(home: CoffeePrefs()));
 }
 
 class Home extends StatelessWidget {
@@ -22,12 +23,18 @@ class Home extends StatelessWidget {
           Container(
             color: Colors.brown[200],
             padding: const EdgeInsets.all(20),
-            child: const Text('How I like my coffee...'),
+            child: const Text('How I like my coffee...',
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
           ),
           Container(
-              color: Colors.brown[100],
-              padding: const EdgeInsets.all(20),
-              child: const Text('Coffee prefs.'))
+            color: Colors.brown[100],
+            padding: const EdgeInsets.all(20),
+            child: const CoffeePrefs(),
+          ),
+          Expanded(
+            child: Image.asset('assets/img/coffee_bg.jpg',
+                fit: BoxFit.fitWidth, alignment: Alignment.bottomCenter),
+          )
         ]));
   }
 }
